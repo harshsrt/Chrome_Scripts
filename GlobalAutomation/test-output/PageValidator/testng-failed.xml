@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PageValidator]">
+  <test name="PageValidator(failed)">
+    <classes>
+      <class name="PageValidator.DetailImageReport">
+        <methods>
+          <include name="DetailImage"/>
+        </methods>
+      </class> <!-- PageValidator.DetailImageReport -->
+      <class name="PageValidator.DuplicateId">
+        <methods>
+          <include name="duplicateId"/>
+        </methods>
+      </class> <!-- PageValidator.DuplicateId -->
+      <class name="PageValidator.DetailedLinkReport">
+        <methods>
+          <include name="Detailed"/>
+        </methods>
+      </class> <!-- PageValidator.DetailedLinkReport -->
+    </classes>
+  </test> <!-- PageValidator(failed) -->
+</suite> <!-- Failed suite [PageValidator] -->

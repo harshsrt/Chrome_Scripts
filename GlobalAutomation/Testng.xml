@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="PageValidator" verbose="1" >
+  <test name="PageValidator" >
+    <classes>
+    <class name="PageValidator.PageSummary" />
+       <class name="PageValidator.DuplicateId" />
+       <class name="PageValidator.DetailedLinkReport" />
+       <class name="PageValidator.LinkStatus" />
+       <class name="PageValidator.BrokenImage" />
+       <class name="PageValidator.DetailImageReport" />
+    </classes>
+  </test>
+</suite>
