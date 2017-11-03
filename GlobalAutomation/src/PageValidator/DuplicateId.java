@@ -35,12 +35,12 @@ public class DuplicateId {
             //Open the URL (Website)
  	  driver.get(methods.URL);
 
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("scroll(0, 1000);");
+	//	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	//	jse.executeScript("scroll(0, 1000);");
 		
-		driver.findElement(By.id("feedbackSectionCloseBtn")).click();
+	//	driver.findElement(By.id("feedbackSectionCloseBtn")).click();
 		
-		driver.findElement(By.xpath("//span[contains(text(), 'Show all')]")).click();
+		//driver.findElement(By.xpath("//span[contains(text(), 'Show all')]")).click();
       FileInputStream fis=new FileInputStream("C:/Selenium/Testdata/Global.xlsx");
       //create a workbook
 		Workbook wb=WorkbookFactory.create(fis);

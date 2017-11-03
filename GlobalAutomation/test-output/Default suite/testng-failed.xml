@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="PageValidator.DetailedLinkReport">
+      <class name="PageValidator.DuplicateId">
         <methods>
-          <include name="Detailed"/>
+          <include name="duplicateId"/>
         </methods>
-      </class> <!-- PageValidator.DetailedLinkReport -->
+      </class> <!-- PageValidator.DuplicateId -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
