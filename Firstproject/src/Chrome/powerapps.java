@@ -1,5 +1,7 @@
 package Chrome;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -43,14 +45,41 @@ public class powerapps {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		Thread.sleep(5000);
 		executor.executeScript("arguments[0].click();",element);
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		//driver.findElement(By.cssSelector("button.template-item-start-button")).click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.template-item-start-button"))).click();
 		Thread.sleep(5000);
 		//driver.findElement(By.cssSelector("button.pa__button--secondary")).click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pa__button--secondary"))).click();
+	  //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pa__button--secondary"))).click();
+		Thread.sleep(15000);
+		wait.until(ExpectedConditions.titleContains("PowerApps"));
+		String homepage=driver.getWindowHandle();
+        System.out.println(homepage);
+        Set<String> windows=driver.getWindowHandles();
+        System.out.println(windows.size());
+        
+        Iterator<String> iterator=windows.iterator();
+        String currentWindowId;
+        
+        while(iterator.hasNext()){
+        	currentWindowId=iterator.next().toString();
+        	System.out.println(currentWindowId);
+        	
+        	if(!currentWindowId.equals(homepage)){
+        		driver.switchTo().window(currentWindowId);
+        		driver.close();
+        		driver.switchTo().window(homepage);
+        	}	
+        	}
 		Thread.sleep(5000);
-		driver.findElement(By.cssSelector("div.Thread.sleep(5000);")).click();
+		//driver.switchTo().alert().dismiss();
+		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pa__button--secondary"))).click();
+		 WebElement ele = driver.findElement(By.cssSelector("div.onboardingTileTitle_lpfpz3"));
+		  
+		  Actions action = new Actions(driver);
+		  action.moveToElement(ele);
+		  action.click().build().perform();
+		Thread.sleep(5000);
 	}
 
 }
