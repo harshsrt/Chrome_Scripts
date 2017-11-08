@@ -12,6 +12,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Brokenlink {
 
@@ -22,18 +25,33 @@ public class Brokenlink {
 		driver.manage().window().maximize();
 		
 		driver.get("https://test.create.powerapps.com/studio/#");
-		driver.findElement(By.id("cred_userid_inputtext")).sendKeys("v-mastha@microsoft.com");
-		driver.findElement(By.id("cred_password_inputtext")).sendKeys("nov@2017");
+		driver.findElement(By.id("cred_userid_inputtext")).sendKeys("user1@msprojectsienav1.onmicrosoft.com");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.id("cred_password_inputtext")).sendKeys("Building9");
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//driver.findElement(By.id("background_company_name_text")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"loginMessage\"]/a/p")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		//wait.until(ExpectedConditions.elementToBeClickable(By.id("cred_sign_in_button")));
+		//driver.findElement(By.xpath("//*[@id=\"loginMessage\"]/a/p")).click();
+		driver.findElement(By.xpath("//button[@id='cred_sign_in_button']"));
 		
+		
+		//driver.findElement(By.id("cred_keep_me_signed_in_checkbox")).click();
+		//driver.findElement(By.id("cred_sign_in_button")).click();
 				
 		
-		driver.findElement(By.id("passwordInput")).sendKeys("nov@2017");
-		driver.findElement(By.id("submitButton")).click();
+		//driver.findElement(By.id("passwordInput")).sendKeys("Building9");
+		//driver.findElement(By.id("submitButton")).click();
+		//driver.findElement(By.id("bannerCloseLink")).click();
+		driver.findElement(By.xpath("//*[@id=\"cred_sign_in_button\"]")).click();
+		wait.until(ExpectedConditions.titleContains("PowerApps"));
+		Thread.sleep(10000);
 		driver.findElement(By.className("template-item-start-button-text")).click();
-		driver.findElement(By.xpath("//*[@id=\"rootBody\"]/div[1]/div[2]/div[2]/button")).click();
+		//driver.findElement(By.xpath("//*[@id=\"rootBody\"]/div[1]/div[2]/div[2]/button")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.className("button-strip")).click();
 		
 		List<WebElement> links=driver.findElements(By.tagName("a"));
 		
