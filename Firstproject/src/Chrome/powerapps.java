@@ -74,11 +74,16 @@ public class powerapps {
 		Thread.sleep(5000);
 		//driver.switchTo().alert().dismiss();
 		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.pa__button--secondary"))).click();
-		 WebElement ele = driver.findElement(By.cssSelector("div.onboardingTileTitle_lpfpz3"));
+		long start=System.currentTimeMillis();
+		WebElement ele = driver.findElement(By.cssSelector("div.onboardingTileTitle_lpfpz3"));
 		  
 		  Actions action = new Actions(driver);
 		  action.moveToElement(ele);
+		  
 		  action.click().build().perform();
+		  long finish=System.currentTimeMillis();
+			long Total_Time=(finish-start);
+			System.out.println(Total_Time);
 		Thread.sleep(5000);
 	}
 
