@@ -1,0 +1,18 @@
+Welcome to PowerApps !
+Time taken by different Events and Controls
+Time taken to Load splash Screen :17.468 seconds
+Time taken to Load Home page :15.801 seconds
+Time taken by Form to load :4.878 seconds
+Time taken by Label to load :2.154 seconds
+Time taken by Button to load :2.505 seconds
+Time taken by Data table to load :3.22 seconds
+Time taken by Gallery to load :7.63 seconds
+Time taken by Combobox to load :3.633 seconds
+Time taken by Dropdown to load :2.807 seconds
+Time taken by Datepicker to load :4.8 seconds
+Time taken by Listbox to load :3.452 seconds
+Time taken by Checkbox to load :3.866 seconds
+Time taken by Radio button to load :3.674 seconds
+Time taken by Toggle to load :3.565 seconds
+Time taken by Slider to load :2.613 seconds
+Time taken by Rating to load :2.533 seconds
