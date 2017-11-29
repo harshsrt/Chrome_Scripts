@@ -5,12 +5,14 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -24,9 +26,12 @@ public class powerapps {
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
 		// launching powerapps
 		driver.get("https://test.create.powerapps.com/studio/#");
+		driver.findElement(By.id("uxOptOutLink")).click();
+		
 		System.out.println("Welcome to PowerApps !");
 		System.out.println("Time taken by different Events and Controls");
 		Thread.sleep(1000);
@@ -78,7 +83,7 @@ public class powerapps {
 				driver.switchTo().window(homepage);
 			}
 		}
-		Thread.sleep(15000);
+		Thread.sleep(20000);
 		double finish_Home = System.currentTimeMillis();
 		double Total_Time_Home = (finish_Home - start_Home) / 1000;
 		System.out.println("Time taken to Load Home page :" + Total_Time_Home + " seconds");
@@ -327,6 +332,146 @@ public class powerapps {
 		double Total_Time_Rating = (finish_Rating - start_Rating) / 1000;
 		// Time taken by radio control in loading
 		System.out.println("Time taken by Rating to load :" + Total_Time_Rating + " seconds");
+		double start_Image = System.currentTimeMillis();
+		WebElement Image = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions Image_action = new Actions(driver);
+		Image_action.moveToElement(Image);
+		Image_action.click().build().perform();
+		// Adding rating control
+		WebElement Image1_template = driver.findElement(By.cssSelector("div#appmagic-image-control"));
+
+		Actions Image1_action = new Actions(driver);
+		Image1_action.moveToElement(Image1_template);
+		Image1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_Image = System.currentTimeMillis();
+		double Total_Time_Image = (finish_Image - start_Image) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Image to load :" + Total_Time_Image + " seconds");
+		
+		double start_Camera = System.currentTimeMillis();
+		WebElement Camera = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions Camera_action = new Actions(driver);
+		Camera_action.moveToElement(Camera);
+		Camera_action.click().build().perform();
+		// Adding rating control
+		WebElement Camera_template = driver.findElement(By.cssSelector("div#appmagic-camera-control"));
+
+		Actions Camera1_action = new Actions(driver);
+		Camera1_action.moveToElement(Camera_template);
+		Camera1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_Camera = System.currentTimeMillis();
+		double Total_Time_Camera = (finish_Camera - start_Camera) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Camera to load :" + Total_Time_Camera + " seconds");
+		
+		double start_Barcode = System.currentTimeMillis();
+		WebElement Barcode = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions barcode_action = new Actions(driver);
+		barcode_action.moveToElement(Barcode);
+		barcode_action.click().build().perform();
+		// Adding rating control
+		WebElement Barcode1_template = driver.findElement(By.cssSelector("div#appmagic-barcode-control"));
+
+		Actions Barcode1_action = new Actions(driver);
+		Barcode1_action.moveToElement(Barcode1_template);
+		Barcode1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_Barcode = System.currentTimeMillis();
+		double Total_Time_Barcode = (finish_Barcode - start_Barcode) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Barcode to load :" + Total_Time_Barcode + " seconds");
+		
+		double start_Video = System.currentTimeMillis();
+		WebElement Video = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions Video_action = new Actions(driver);
+		Video_action.moveToElement(Video);
+		Video_action.click().build().perform();
+		// Adding rating control
+		WebElement Video1_template = driver.findElement(By.cssSelector("div#appmagic-video-playback-control"));
+
+		Actions Video1_action = new Actions(driver);
+		Video1_action.moveToElement(Video1_template);
+		Video1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(4000);
+		double finish_Video = System.currentTimeMillis();
+		double Total_Time_Video = (finish_Video - start_Video) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Video to load :" + Total_Time_Video + " seconds");
+		
+		double start_Audio = System.currentTimeMillis();
+		WebElement Audio = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions Audio_action = new Actions(driver);
+		Audio_action.moveToElement(Audio);
+		Audio_action.click().build().perform();
+		// Adding rating control
+		WebElement Audio1_template = driver.findElement(By.cssSelector("div#appmagic-audio-playback-control"));
+
+		Actions Audio1_action = new Actions(driver);
+		Audio1_action.moveToElement(Audio1_template);
+		Audio1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_Audio = System.currentTimeMillis();
+		double Total_Time_Audio = (finish_Audio - start_Audio) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Audio to load :" + Total_Time_Audio + " seconds");
+		
+		double start_Microphone = System.currentTimeMillis();
+		WebElement Microphone = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions Microphone_action = new Actions(driver);
+		Microphone_action.moveToElement(Microphone);
+		Microphone_action.click().build().perform();
+		// Adding rating control
+		WebElement Microphone_template = driver.findElement(By.cssSelector("div#appmagic-microphone-control"));
+
+		Actions Microphone1_action = new Actions(driver);
+		Microphone1_action.moveToElement(Microphone_template);
+		Microphone1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_Microphone = System.currentTimeMillis();
+		double Total_Time_Microphone = (finish_Microphone - start_Microphone) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by Microphone to load :" + Total_Time_Microphone + " seconds");
+		
+		double start_AddPicture = System.currentTimeMillis();
+		WebElement AddPicture = driver.findElement(By.cssSelector("div#appmagic-media-group"));
+
+		Actions AddPicture_action = new Actions(driver);
+		AddPicture_action.moveToElement(AddPicture);
+		AddPicture_action.click().build().perform();
+		// Adding rating control
+		WebElement AddPicture_template = driver.findElement(By.cssSelector("div#appmagic-AddMediaWithImage-control"));
+
+		Actions AddPicture1_action = new Actions(driver);
+		AddPicture1_action.moveToElement(AddPicture_template);
+		AddPicture1_action.click().build().perform();
+
+		// wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.formConnectDataPlaceholder")));
+		Thread.sleep(2000);
+		double finish_AddPicture = System.currentTimeMillis();
+		double Total_Time_AddPicture = (finish_AddPicture - start_AddPicture) / 1000;
+		// Time taken by radio control in loading
+		System.out.println("Time taken by AddPicture to load :" + Total_Time_AddPicture + " seconds");
+
 
 	}
 
